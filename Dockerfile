@@ -8,8 +8,8 @@ WORKDIR /app
 # Kopiuj pliki potrzebne do instalacji zależności
 COPY package.json package-lock.json* ./
 
-# Instaluj tylko zależności produkcyjne
-RUN npm ci --only=production
+# Instaluj wszystkie zależności, w tym deweloperskie
+RUN npm ci
 
 # Etap budowania
 FROM base AS builder
