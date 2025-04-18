@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "./button";
 import { ArrowRight, Download, Star } from "lucide-react";
 

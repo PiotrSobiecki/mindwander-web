@@ -1,12 +1,5 @@
 import { Search, CalendarClock, UserCheck, HomeIcon } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./card";
+import { Card, CardContent, CardHeader, CardTitle } from "./card";
 
 const steps = [
   {
