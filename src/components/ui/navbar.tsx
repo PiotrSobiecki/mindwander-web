@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Facebook, Instagram } from "lucide-react";
 import { Button } from "./button";
 import {
   DropdownMenu,
@@ -48,6 +48,23 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Social Media Icons */}
+            <div className="flex space-x-2 mr-4">
+              <Link
+                href="#"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </Link>
+            </div>
             <Button variant="outline">Zaloguj się</Button>
             <Button>Zarejestruj się</Button>
           </div>
@@ -71,6 +88,19 @@ export function Navbar() {
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="#faq">FAQ</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className="flex justify-between items-center"
+              >
+                <div className="flex space-x-2">
+                  <a href="#" aria-label="Facebook">
+                    <Facebook className="h-4 w-4" />
+                  </a>
+                  <a href="#" aria-label="Instagram">
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                </div>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="#" className="font-medium">

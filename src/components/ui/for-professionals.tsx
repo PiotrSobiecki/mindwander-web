@@ -5,8 +5,10 @@ import {
   Star,
   Users,
   TrendingUp,
+  Shield,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
+import Image from "next/image";
 
 const benefits = [
   {
@@ -38,6 +40,12 @@ const benefits = [
     title: "Rozwój zawodowy",
     description:
       "Szkolenia i certyfikaty, które pomogą Ci podnosić kwalifikacje i zarabiać więcej.",
+  },
+  {
+    icon: Shield,
+    title: "Bezpieczeństwo",
+    description:
+      "Gwarancja płatności za wykonane usługi oraz bezpieczne transakcje online.",
   },
 ];
 
@@ -146,7 +154,22 @@ export function ForProfessionals() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white h-[550px]">
+            <div className="absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-primary/10 z-10"></div>
+            <div className="absolute right-10 top-10 h-20 w-20 rounded-full bg-secondary z-10"></div>
+
+            <div className="relative h-full w-full z-20">
+              <Image
+                src="/images/professional.png"
+                alt="Profesjonalny fachowiec korzystający z aplikacji DOMIDO"
+                fill
+                className="object-cover"
+                style={{ borderRadius: "1rem" }}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:col-span-2">
             {benefits.map((benefit, index) => (
               <div
                 key={index}

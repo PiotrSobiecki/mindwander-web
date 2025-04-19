@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Button } from "./button";
-import { ArrowRight, Download, Star } from "lucide-react";
+import { ArrowRight, Star, Download } from "lucide-react";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -22,14 +24,16 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="gap-2">
-                <Download className="h-5 w-5" />
-                Pobierz aplikację
-              </Button>
               <Button size="lg" variant="outline" className="gap-2">
                 Znajdź fachowca
                 <ArrowRight className="h-5 w-5" />
               </Button>
+              <Link href="#pobierz-aplikacje">
+                <Button size="lg" className="gap-2">
+                  <Download className="h-5 w-5" />
+                  Pobierz aplikację
+                </Button>
+              </Link>
             </div>
 
             <div className="flex items-center gap-3">
@@ -54,17 +58,25 @@ export function HeroSection() {
 
           <div className="relative h-[500px] md:h-[550px]">
             <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-              <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-primary/10"></div>
-              <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-secondary"></div>
+              <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/10 z-10"></div>
+              <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-secondary z-10"></div>
+              <div className="absolute right-20 top-10 h-16 w-16 rounded-full bg-primary/20 z-10"></div>
 
-              <div className="relative h-full w-full p-6 flex items-center justify-center">
-                <div className="max-w-[280px] mx-auto">
-                  <div className="w-full aspect-[9/16] bg-gray-200 rounded-xl mb-4 overflow-hidden relative">
-                    {/* Tutaj będzie screenshot aplikacji - możesz zastąpić divem poniżej rzeczywistym obrazem */}
-                    <div className="absolute inset-0 flex items-center justify-center text-lg font-medium text-gray-600">
-                      [Aplikacja DOMIDO]
-                    </div>
+              <div className="relative h-full w-full p-6 flex items-center justify-center z-20">
+                <div className="relative w-full h-full max-w-[450px] mx-auto overflow-hidden rounded-3xl border-4 border-white shadow-lg">
+                  <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                    <span className="text-gray-500 text-lg">
+                      Aplikacja DOMIDO
+                    </span>
                   </div>
+                  <Image
+                    src="/images/woman.png"
+                    alt="Kobieta korzystająca z aplikacji DOMIDO"
+                    fill
+                    priority
+                    className="object-cover"
+                    style={{ borderRadius: "1.5rem" }}
+                  />
                 </div>
               </div>
             </div>

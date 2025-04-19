@@ -1,5 +1,6 @@
 import { Search, CalendarClock, UserCheck, HomeIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import Link from "next/link";
 
 const steps = [
   {
@@ -66,7 +67,10 @@ export function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-16 md:mt-24 max-w-3xl mx-auto bg-secondary/50 rounded-xl p-6 lg:p-10">
+        <div
+          className="mt-16 md:mt-24 max-w-3xl mx-auto bg-secondary/50 rounded-xl p-6 lg:p-10"
+          id="pobierz-aplikacje"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-3">
@@ -77,57 +81,93 @@ export function HowItWorks() {
                 jednym miejscu.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="flex items-center justify-center bg-gray-900 text-white rounded-xl py-3 px-6 hover:bg-gray-800 transition-colors">
-                  <span className="mr-2">
+                <Link
+                  href="#"
+                  className="flex items-center gap-2 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors"
+                >
+                  <div className="flex-shrink-0">
                     <svg
-                      className="w-5 h-5"
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
-                      fill="none"
+                      fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M19.0813 20.0652C19.6693 21.4067 19.9767 22.0652 19.5903 22.0652C19.2438 22.0652 18.6588 21.6473 17.7173 20.9477C16.6588 20.1552 16.2898 19.9196 15.9042 19.9196H8.09578C7.71018 19.9196 7.34119 20.1552 6.28269 20.9477C5.34119 21.6473 4.75615 22.0652 4.40963 22.0652C4.02328 22.0652 4.33069 21.4067 4.91868 20.0652C5.56585 18.6087 5.60963 17.9477 5.60963 16.0652V7.93478C5.60963 6.0523 5.56586 5.39131 4.91868 3.93478C4.33069 2.59331 4.02328 1.93478 4.40963 1.93478C4.75615 1.93478 5.34119 2.3527 6.28269 3.0523C7.34119 3.84478 7.71018 4.08044 8.09578 4.08044H15.9042C16.2898 4.08044 16.6588 3.84478 17.7173 3.0523C18.6588 2.3527 19.2438 1.93478 19.5903 1.93478C19.9767 1.93478 19.6693 2.59331 19.0813 3.93478C18.4341 5.39131 18.3903 6.0523 18.3903 7.93478V16.0652C18.3903 17.9477 18.4341 18.6087 19.0813 20.0652Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <path d="M17.0519 12.4386C17.0387 9.60543 19.4383 8.2261 19.5347 8.16893C18.1673 6.11486 16.0363 5.83283 15.2852 5.80737C13.4841 5.61714 11.7362 6.88502 10.8219 6.88502C9.88851 6.88502 8.46023 5.82658 6.92356 5.85791C4.93329 5.88883 3.08389 7.03167 2.0772 8.77277C-0.00389048 12.3116 1.55337 17.5141 3.5393 20.3147C4.53317 21.6902 5.69749 23.2426 7.2086 23.1932C8.68162 23.139 9.24425 22.2622 11.0234 22.2622C12.7859 22.2622 13.313 23.1932 14.8509 23.1661C16.4324 23.139 17.4394 21.7597 18.3971 20.3761C19.5444 18.7908 19.9945 17.2357 20.0153 17.1615C19.9775 17.1487 17.0694 15.9325 17.0519 12.4386Z" />
+                      <path d="M14.4918 3.73876C15.2909 2.74903 15.8247 1.39529 15.6825 0.0125732C14.5291 0.0623167 13.1046 0.810947 12.2739 1.77682C11.5323 2.63552 10.89 4.03082 11.0498 5.36813C12.3423 5.46134 13.6569 4.71405 14.4918 3.73876Z" />
                     </svg>
-                  </span>
-                  <span>App Store</span>
-                </button>
-                <button className="flex items-center justify-center bg-gray-900 text-white rounded-xl py-3 px-6 hover:bg-gray-800 transition-colors">
-                  <span className="mr-2">
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs leading-none">Pobierz z</span>
+                    <span className="text-base font-semibold leading-tight">
+                      App Store
+                    </span>
+                  </div>
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-2 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors"
+                >
+                  <div className="flex-shrink-0">
                     <svg
-                      className="w-5 h-5"
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
-                      fill="none"
+                      fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M6.5 7.5L17.5 16.5M12 3V21M5 16.5V7.5C5 6.83696 5.26339 6.20107 5.73223 5.73223C6.20107 5.26339 6.83696 5 7.5 5H16.5C17.163 5 17.7989 5.26339 18.2678 5.73223C18.7366 6.20107 19 6.83696 19 7.5V16.5C19 17.163 18.7366 17.7989 18.2678 18.2678C17.7989 18.7366 17.163 19 16.5 19H7.5C6.83696 19 6.20107 18.7366 5.73223 18.2678C5.26339 17.7989 5 17.163 5 16.5Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <path d="M17.6603 7.06606L5.69846 0.385393C5.10537 0.042456 4.4373 -0.0771956 3.77907 0.0586096C3.12085 0.194415 2.51932 0.577718 2.07551 1.14544C1.63619 1.71038 1.38386 2.42527 1.36364 3.16723V20.8266C1.38386 21.5686 1.63619 22.2835 2.07551 22.8484C2.51932 23.4161 3.12085 23.7994 3.77907 23.9353C4.4373 24.071 5.10537 23.9514 5.69846 23.6085L17.6603 16.9339C18.2048 16.617 18.6527 16.1476 18.9498 15.5803C19.2468 15.013 19.3813 14.3722 19.3389 13.7321V10.268C19.3813 9.62786 19.2468 8.98703 18.9498 8.41974C18.6527 7.85244 18.2048 7.38296 17.6603 7.06606Z" />
                     </svg>
-                  </span>
-                  <span>Google Play</span>
-                </button>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs leading-none">Pobierz z</span>
+                    <span className="text-base font-semibold leading-tight">
+                      Google Play
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="hidden md:block relative">
               <div className="absolute -right-5 -top-5 h-20 w-20 rounded-full bg-primary/10"></div>
-              <div className="h-[300px] bg-gray-200 rounded-xl flex items-center justify-center text-lg font-medium text-gray-600">
-                [Wizualizacja aplikacji]
+              <div className="h-[300px] bg-gray-200 rounded-xl flex flex-col items-center justify-center overflow-hidden relative">
+                <div className="absolute inset-0 w-full h-full flex flex-col">
+                  <div className="h-14 bg-primary flex items-center justify-center text-white font-semibold">
+                    DOMIDO App
+                  </div>
+                  <div className="flex-1 bg-gray-100 p-3">
+                    <div className="bg-white rounded-lg shadow-sm p-3 mb-3 flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full bg-primary/20 flex-shrink-0"></div>
+                      <div className="flex-1">
+                        <div className="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                      <div className="h-8 w-12 rounded bg-primary/10"></div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-sm p-3 mb-3 flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full bg-secondary/20 flex-shrink-0"></div>
+                      <div className="flex-1">
+                        <div className="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                      <div className="h-8 w-12 rounded bg-primary/10"></div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-sm p-3 mb-3 flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full bg-blue-200 flex-shrink-0"></div>
+                      <div className="flex-1">
+                        <div className="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                      <div className="h-8 w-12 rounded bg-primary/10"></div>
+                    </div>
+                  </div>
+                  <div className="h-12 bg-gray-200 border-t border-gray-300 flex items-center justify-around">
+                    <div className="w-8 h-8 rounded-full bg-gray-300"></div>
+                    <div className="w-8 h-8 rounded-full bg-gray-300"></div>
+                    <div className="w-8 h-8 rounded-full bg-primary/50"></div>
+                    <div className="w-8 h-8 rounded-full bg-gray-300"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
