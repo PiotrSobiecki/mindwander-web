@@ -23,13 +23,15 @@ export function HeroSection() {
               sprawdzonych fachowców szybko i wygodnie w aplikacji DOMIDO.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline" className="gap-2">
-                Znajdź fachowca
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Link href="#pobierz-aplikacje">
-                <Button size="lg" className="gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <Link href="/znajdz-fachowca" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="gap-2 w-full">
+                  Znajdź fachowca
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="#pobierz-aplikacje" className="w-full sm:w-auto">
+                <Button size="lg" className="gap-2 w-full">
                   <Download className="h-5 w-5" />
                   Pobierz aplikację
                 </Button>

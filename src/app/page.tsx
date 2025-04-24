@@ -22,7 +22,7 @@ export default function Home() {
           </p>
           <Link
             href="#jak-to-dziala"
-            className="flex items-center gap-2 bg-white text-primary px-4 py-1.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
+            className="hidden md:flex items-center gap-2 bg-white text-primary px-4 py-1.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
           >
             <Download className="h-4 w-4" />
             Pobierz aplikację

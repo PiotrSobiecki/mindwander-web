@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Menu, Facebook, Instagram } from "lucide-react";
+import { Menu, Facebook, Instagram, Search } from "lucide-react";
 import { Button } from "./button";
 import {
   DropdownMenu,
@@ -20,6 +20,13 @@ export function Navbar() {
 
           {/* Nawigacja desktopowa */}
           <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/znajdz-fachowca"
+              className="text-gray-700 hover:text-primary transition-colors flex items-center gap-1"
+            >
+              <Search className="h-4 w-4" />
+              Znajdź fachowca
+            </Link>
             <Link
               href="#jak-to-dziala"
               className="text-gray-700 hover:text-primary transition-colors"
@@ -77,6 +84,15 @@ export function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuItem asChild>
+                <Link
+                  href="/znajdz-fachowca"
+                  className="flex items-center gap-2"
+                >
+                  <Search className="h-4 w-4" />
+                  Znajdź fachowca
+                </Link>
+              </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="#jak-to-dziala">Jak to działa</Link>
               </DropdownMenuItem>

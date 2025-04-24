@@ -1,3 +1,48 @@
+# DOMIDO - Aplikacja do zamawiania fachowców jak pizzę
+
+## Integracja z Google Maps Places API
+
+Projekt DOMIDO wykorzystuje Google Maps Places API do wyszukiwania fachowców w określonej lokalizacji. Aby poprawnie skonfigurować API:
+
+1. Utwórz projekt w [Google Cloud Console](https://console.cloud.google.com/)
+2. Włącz Places API dla swojego projektu
+3. Utwórz klucz API i ogranicz go do Places API
+4. Ustaw odpowiednie ograniczenia dla klucza API (domeny, adresy IP)
+5. Umieść klucz API w zmiennych środowiskowych projektu
+
+### Konfiguracja zmiennych środowiskowych
+
+Utwórz plik `.env.local` w głównym katalogu projektu i dodaj następujące zmienne:
+
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=twój_klucz_api
+```
+
+### Dodatkowe informacje
+
+- Google Maps Places API wymaga włączenia płatności w projekcie Google Cloud
+- Istnieją limity darmowego użycia API, po których przekroczeniu naliczane są opłaty
+- Warto monitorować użycie API w konsoli Google Cloud, aby uniknąć nieoczekiwanych kosztów
+
+## Uruchomienie projektu
+
+```bash
+# Instalacja zależności
+npm install
+
+# Uruchomienie serwera deweloperskiego
+npm run dev
+```
+
+Otwórz [http://localhost:3000](http://localhost:3000) w przeglądarce, aby zobaczyć aplikację.
+
+## Funkcje aplikacji
+
+- Wyszukiwanie fachowców w określonej lokalizacji
+- Filtrowanie wyników według typu usługi
+- Wyświetlanie ocen i opinii o fachowcach
+- Możliwość kontaktu z wybranymi fachowcami
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
