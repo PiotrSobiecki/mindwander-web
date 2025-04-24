@@ -382,15 +382,23 @@ export default function ZnajdzFachowca() {
         } else {
           setBlad("Otrzymano nieprawidłowy format danych z API. Brak wyników.");
         }
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error("Błąd podczas wywołania API:", error);
-        setBlad(`Błąd podczas komunikacji z API: ${error.message}`);
+        setBlad(
+          `Błąd podczas komunikacji z API: ${
+            error instanceof Error ? error.message : String(error)
+          }`
+        );
       } finally {
         setLadowanie(false);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Błąd podczas wyszukiwania:", error);
-      setBlad(`Wystąpił błąd: ${error.message}`);
+      setBlad(
+        `Wystąpił błąd: ${
+          error instanceof Error ? error.message : String(error)
+        }`
+      );
       setLadowanie(false);
     }
   };
