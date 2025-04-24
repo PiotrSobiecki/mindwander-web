@@ -18,13 +18,14 @@ import Link from "next/link";
 
 // Definicje typów
 type Fachowiec = {
-  id: number;
+  id: string;
   nazwa: string;
   adres: string;
   ocena: number;
   opinie: number;
   telefon: string;
   specialization: string;
+  status?: string;
 };
 
 type DzielniceMap = {
@@ -35,8 +36,31 @@ type CoordinatesMap = {
   [wojewodztwo: string]: { lat: number; lng: number };
 };
 
+type SearchParams = {
+  location: string;
+  radius: number;
+  type: string;
+  keyword: string;
+};
+
+type ApiResponse = {
+  status: string;
+  results?: PlaceResult[];
+  error_message?: string;
+};
+
+type PlaceResult = {
+  place_id?: string;
+  name?: string;
+  vicinity?: string;
+  rating?: number;
+  user_ratings_total?: number;
+  business_status?: string;
+  types?: string[];
+};
+
 // Lista województw w Polsce
-const wojewodztwa = [
+const _wojewodztwa = [
   "dolnośląskie",
   "kujawsko-pomorskie",
   "lubelskie",
@@ -202,7 +226,7 @@ export default function ZnajdzFachowca() {
   const [ladowanie, setLadowanie] = useState(false);
   const [pokazDzielnice, setPokazDzielnice] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
-  const [apiResponse, setApiResponse] = useState<any>(null);
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
 
   // Sprawdza, czy miasto jest duże i ma dzielnice
   useEffect(() => {
@@ -292,11 +316,11 @@ export default function ZnajdzFachowca() {
         });
 
         if (!response.ok) {
-          const errorData = await response.json();
+          const errorData = (await response.json()) as { error: string };
           throw new Error(errorData.error || `Błąd HTTP: ${response.status}`);
         }
 
-        const data = await response.json();
+        const data = (await response.json()) as ApiResponse;
         setApiResponse(data); // Zapisujemy surową odpowiedź z API dla debugowania
 
         // Sprawdzenie statusu odpowiedzi Google API
@@ -325,7 +349,7 @@ export default function ZnajdzFachowca() {
             "Fachowiec";
 
           const wynikiFachowcow = data.results.map(
-            (result: any, index: number) => {
+            (result: PlaceResult, index: number) => {
               // Filtrujemy typy usług, które są istotne
               const typyUslug =
                 result.types
@@ -571,8 +595,8 @@ export default function ZnajdzFachowca() {
             miasto && (
               <div className="text-center py-12">
                 <p className="text-lg text-gray-600">
-                  Wprowadź dane lokalizacji i kliknij "Szukaj fachowców", aby
-                  zobaczyć wyniki.
+                  Wprowadź dane lokalizacji i kliknij &quot;Szukaj
+                  fachowców&quot;, aby zobaczyć wyniki.
                 </p>
               </div>
             )

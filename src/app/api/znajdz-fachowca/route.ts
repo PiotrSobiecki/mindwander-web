@@ -1,8 +1,22 @@
 import { NextResponse } from "next/server";
 
+// Definicje typów dla API
+type SearchRequest = {
+  location: string;
+  radius: number;
+  type: string;
+  keyword?: string;
+};
+
+type GooglePlacesApiResponse = {
+  status: string;
+  results: any[];
+  error_message?: string;
+};
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = (await request.json()) as SearchRequest;
     const { location, radius, type, keyword } = body;
 
     // Sprawdzanie wymaganych parametrów
@@ -58,7 +72,7 @@ export async function POST(request: Request) {
         );
       }
 
-      const data = await response.json();
+      const data = (await response.json()) as GooglePlacesApiResponse;
 
       // Logowanie statusu odpowiedzi z Google
       console.log(`Google API response status: ${data.status}`);
@@ -73,17 +87,33 @@ export async function POST(request: Request) {
 
       // Zwracanie wyników z Google API, niezależnie od statusu
       return NextResponse.json(data);
-    } catch (fetchError: any) {
-      console.error("Fetch error:", fetchError.message);
+    } catch (fetchError: unknown) {
+      console.error(
+        "Fetch error:",
+        fetchError instanceof Error ? fetchError.message : String(fetchError)
+      );
       return NextResponse.json(
-        { error: `Błąd podczas żądania do Google API: ${fetchError.message}` },
+        {
+          error: `Błąd podczas żądania do Google API: ${
+            fetchError instanceof Error
+              ? fetchError.message
+              : String(fetchError)
+          }`,
+        },
         { status: 500 }
       );
     }
-  } catch (error: any) {
-    console.error("Server error:", error.message);
+  } catch (error: unknown) {
+    console.error(
+      "Server error:",
+      error instanceof Error ? error.message : String(error)
+    );
     return NextResponse.json(
-      { error: `Błąd serwera: ${error.message}` },
+      {
+        error: `Błąd serwera: ${
+          error instanceof Error ? error.message : String(error)
+        }`,
+      },
       { status: 500 }
     );
   }
