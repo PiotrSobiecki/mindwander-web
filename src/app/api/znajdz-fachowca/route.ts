@@ -10,7 +10,7 @@ type SearchRequest = {
 
 type GooglePlacesApiResponse = {
   status: string;
-  results: any[];
+  results: Record<string, unknown>[];
   error_message?: string;
 };
 

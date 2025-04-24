@@ -6,15 +6,12 @@ import { Footer } from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import {
   Search,
-  MapPin,
   Building,
   Home,
   Phone,
   User,
   AlertTriangle,
-  Info,
 } from "lucide-react";
-import Link from "next/link";
 
 // Definicje typów
 type Fachowiec = {
@@ -36,13 +33,6 @@ type CoordinatesMap = {
   [wojewodztwo: string]: { lat: number; lng: number };
 };
 
-type SearchParams = {
-  location: string;
-  radius: number;
-  type: string;
-  keyword: string;
-};
-
 type ApiResponse = {
   status: string;
   results?: PlaceResult[];
@@ -60,6 +50,7 @@ type PlaceResult = {
 };
 
 // Lista województw w Polsce
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _wojewodztwa = [
   "dolnośląskie",
   "kujawsko-pomorskie",
@@ -226,6 +217,7 @@ export default function ZnajdzFachowca() {
   const [ladowanie, setLadowanie] = useState(false);
   const [pokazDzielnice, setPokazDzielnice] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
 
   // Sprawdza, czy miasto jest duże i ma dzielnice
