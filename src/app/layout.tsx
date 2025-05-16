@@ -1,32 +1,35 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { AccessibilityWidget } from "@/components/ui/accessibility";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
-export const metadata: Metadata = {
-  title: "DOMIDO - Zamów fachowca jak pizzę",
+export const metadata = {
+  title: "MindWander - Odkrywaj granice wiedzy",
   description:
-    "Platforma do zamawiania usług domowych - sprzątanie, naprawy, hydraulik i wiele więcej. Znajdź sprawdzonego fachowca szybko i wygodnie.",
+    "Poznaj zaskakujące powiązania między dyscyplinami dzięki mocy sztucznej inteligencji.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pl">
+    <html lang="pl" className={`${inter.variable}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#2ecc71" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
-      <body className={inter.className}>
+      <body className="min-h-screen bg-white font-sans antialiased">
         {children}
-        <AccessibilityWidget />
       </body>
     </html>
   );
