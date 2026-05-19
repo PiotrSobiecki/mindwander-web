@@ -110,8 +110,8 @@ export default function Privacy() {
                   Zewnętrzne API
                 </h3>
                 <p className="text-gray-700">
-                  Wszelkie zapytania do zewnętrznych API (OpenRouter, Google
-                  Custom Search) są wykonywane wyłącznie w celu realizacji
+                  Wszelkie zapytania do zewnętrznych API (OpenAI, Brave Search)
+                  są wykonywane wyłącznie w celu realizacji
                   funkcji rozszerzenia i nie zawierają danych umożliwiających
                   identyfikację użytkownika.
                 </p>

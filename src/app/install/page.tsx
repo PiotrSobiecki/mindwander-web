@@ -49,9 +49,9 @@ export default function Install() {
               </h2>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>TypeScript</li>
-                <li>Chrome Extensions API</li>
-                <li>OpenRouter API (dostęp do zaawansowanych modeli AI)</li>
-                <li>Google Custom Search API</li>
+                <li>Chrome Extensions API (Manifest V3)</li>
+                <li>OpenAI API (domyślnie gpt-4o-mini)</li>
+                <li>Brave Search API</li>
               </ul>
 
               <h2 className="text-2xl font-semibold mb-4 mt-10 text-gray-900">
@@ -59,7 +59,9 @@ export default function Install() {
               </h2>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Node.js i npm</li>
-                <li>Przeglądarka oparta na Chromium (Chrome, Edge, itp.)</li>
+                <li>Przeglądarka oparta na Chromium (Chrome, Brave, Edge)</li>
+                <li>Klucz OpenAI</li>
+                <li>Klucz Brave Search</li>
               </ul>
 
               <h2 className="text-2xl font-semibold mb-4 mt-10 text-gray-900">
@@ -92,13 +94,33 @@ export default function Install() {
                     Edytuj src/config.ts i dodaj swoje klucze API:
                   </p>
                   <ul className="list-disc pl-6 mb-2">
-                    <li>Klucz OpenRouter API lub OPENAI</li>
-                    <li>Klucz Google Custom Search API</li>
-                    <li>Klucz Google CX</li>
+                    <li>
+                      <code>OPENAI_API_KEY</code> —{" "}
+                      <a
+                        href="https://platform.openai.com/api-keys"
+                        className="text-[#1c7ed6] hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        platform.openai.com/api-keys
+                      </a>
+                    </li>
+                    <li>
+                      <code>BRAVE_API_KEY</code> —{" "}
+                      <a
+                        href="https://brave.com/search/api"
+                        className="text-[#1c7ed6] hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        brave.com/search/api
+                      </a>
+                    </li>
                   </ul>
                   <p className="text-gray-600 text-sm mt-2">
-                    (Klucze API są wymagane do działania funkcji wyszukiwania i
-                    generowania treści przez sztuczną inteligencję)
+                    Plik <code>src/config.ts</code> jest w .gitignore — nie
+                    commituj kluczy. OPENAI_API_URL, BRAVE_API_URL i MODEL_AI
+                    zostaw jak w przykładzie, chyba że chcesz inny model OpenAI.
                   </p>
                 </li>
                 <li>
@@ -106,16 +128,27 @@ export default function Install() {
                   <pre className="bg-gray-100 rounded p-3 overflow-x-auto">
                     <code>npm run build</code>
                   </pre>
+                  <p className="text-gray-600 text-sm mt-2">
+                    Opcjonalnie: <code>npm run test:apis</code> — sprawdza klucze
+                    OpenAI i Brave Search.
+                  </p>
                 </li>
                 <li>
                   <p className="font-semibold">
-                    Zainstaluj rozszerzenie w Chrome:
+                    Zainstaluj rozszerzenie w przeglądarce:
                   </p>
                   <ul className="list-disc pl-6">
-                    <li>Otwórz chrome://extensions/</li>
-                    <li>Włącz "Tryb dewelopera"</li>
-                    <li>Kliknij "Wczytaj rozpakowane"</li>
-                    <li>Wybierz folder dist z tego repozytorium</li>
+                    <li>
+                      Otwórz <code>chrome://extensions/</code>,{" "}
+                      <code>brave://extensions/</code> lub{" "}
+                      <code>edge://extensions/</code>
+                    </li>
+                    <li>Włącz „Tryb dewelopera”</li>
+                    <li>Kliknij „Wczytaj rozpakowane”</li>
+                    <li>
+                      Wybierz folder <code>dist</code> z repozytorium (nie{" "}
+                      <code>src</code>)
+                    </li>
                   </ul>
                 </li>
               </ol>
@@ -127,7 +160,7 @@ export default function Install() {
                 Po zainstalowaniu, MindWander działa w tle podczas przeglądania
                 stron internetowych. Będzie analizować zawartość stron, a
                 następnie prezentować inspirujące sugestie w formie dyskretnego
-                popup'u w prawym dolnym rogu.
+                popup&apos;u w prawym dolnym rogu.
               </p>
               <p className="mb-6">Każda sugestia zawiera:</p>
               <ul className="list-disc pl-6 mb-6">
@@ -146,11 +179,12 @@ export default function Install() {
                 Aby pracować nad rozszerzeniem w trybie deweloperskim:
               </p>
               <pre className="bg-gray-100 rounded p-3 overflow-x-auto mb-6">
-                <code>npm run dev</code>
+                <code>npm run watch</code>
               </pre>
               <p>
-                To uruchomi budowanie w trybie watch, automatycznie rekompilując
-                kod po każdej zmianie.
+                Po zmianach w TypeScript uruchom ponownie{" "}
+                <code>npm run copy-files</code> lub pełne{" "}
+                <code>npm run build</code>.
               </p>
 
               <div className="bg-[#d0ebff] p-6 rounded-lg mt-10 mb-6">
