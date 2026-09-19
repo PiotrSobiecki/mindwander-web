@@ -1,4 +1,7 @@
 import Link from "next/link";
+import CurrentYear from "./CurrentYear";
+
+const LAUNCH_YEAR = 2025;
 
 export default function Footer() {
   return (
@@ -34,8 +37,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-6 text-center md:text-left text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} MindWander. Wszystkie prawa
-          zastrzeżone.
+          &copy; <CurrentYear since={LAUNCH_YEAR} /> MindWander. Wszystkie
+          prawa zastrzeżone.
         </div>
       </div>
     </footer>

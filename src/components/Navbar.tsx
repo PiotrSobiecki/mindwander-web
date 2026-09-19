@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ClockIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,9 +41,13 @@ export default function Navbar() {
             </Link>
             <Link
               href="/install"
-              className="text-gray-700 hover:text-[#339af0] transition-colors font-medium"
+              className={`transition-colors font-medium ${
+                pathname === "/install"
+                  ? "text-[#1c7ed6]"
+                  : "text-gray-700 hover:text-[#339af0]"
+              }`}
             >
-              <span className="flex items-center">Instalacja</span>
+              Instalacja
             </Link>
             <button
               disabled
@@ -114,7 +117,7 @@ export default function Navbar() {
             <Link
               href="/install"
               className={`block py-3 rounded-md px-4 ${
-                pathname === "/how-it-works"
+                pathname === "/install"
                   ? "text-[#1c7ed6] bg-[#d0ebff]"
                   : "text-gray-700 hover:bg-[#d0ebff]"
               }`}

@@ -1,6 +1,36 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+// Math.random() w renderze łamie regułę czystości Reacta i daje inny obrazek
+// przy każdym buildzie. Ziarno jest stałe, więc grafika też.
+function seeded(seed: number) {
+  let t = seed;
+  return () => {
+    t = (t + 0x6d2b79f5) | 0;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const rand = seeded(0x4d696e64);
+const round = (n: number) => Math.round(n * 100) / 100;
+
+const CIRCLES = Array.from({ length: 20 }, () => ({
+  cx: round(100 + rand() * 200),
+  cy: round(100 + rand() * 200),
+  r: round(5 + rand() * 10),
+  opacity: round(0.3 + rand() * 0.7),
+}));
+
+const LINES = Array.from({ length: 30 }, () => ({
+  x1: round(50 + rand() * 300),
+  y1: round(50 + rand() * 300),
+  x2: round(50 + rand() * 300),
+  y2: round(50 + rand() * 300),
+  opacity: round(0.1 + rand() * 0.4),
+}));
+
 export default function Hero() {
   return (
     <div className="py-24 md:py-32">
@@ -38,6 +68,7 @@ export default function Hero() {
                 viewBox="0 0 400 400"
                 className="w-full h-full"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <defs>
                   <linearGradient
@@ -52,23 +83,23 @@ export default function Hero() {
                   </linearGradient>
                 </defs>
                 <g fill="none" stroke="url(#gradient)" strokeWidth="2">
-                  {Array.from({ length: 20 }).map((_, i) => (
+                  {CIRCLES.map((c, i) => (
                     <circle
                       key={`circle-${i}`}
-                      cx={100 + Math.random() * 200}
-                      cy={100 + Math.random() * 200}
-                      r={5 + Math.random() * 10}
-                      opacity={0.3 + Math.random() * 0.7}
+                      cx={c.cx}
+                      cy={c.cy}
+                      r={c.r}
+                      opacity={c.opacity}
                     />
                   ))}
-                  {Array.from({ length: 30 }).map((_, i) => (
+                  {LINES.map((l, i) => (
                     <line
                       key={`line-${i}`}
-                      x1={50 + Math.random() * 300}
-                      y1={50 + Math.random() * 300}
-                      x2={50 + Math.random() * 300}
-                      y2={50 + Math.random() * 300}
-                      opacity={0.1 + Math.random() * 0.4}
+                      x1={l.x1}
+                      y1={l.y1}
+                      x2={l.x2}
+                      y2={l.y2}
+                      opacity={l.opacity}
                     />
                   ))}
                 </g>
