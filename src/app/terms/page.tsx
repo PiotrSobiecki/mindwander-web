@@ -11,7 +11,7 @@ export default function Terms() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -28,7 +28,7 @@ export default function Terms() {
             </h1>
 
             <div className="prose prose-lg max-w-none">
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-xl mb-12">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-xl mb-12">
                 <p className="text-gray-700">
                   Korzystając z Rozszerzenia MindWander, użytkownik akceptuje
                   niniejszy Regulamin. Jeśli nie zgadzasz się z jakimkolwiek
@@ -105,7 +105,7 @@ export default function Terms() {
                 </svg>
                 Warunki korzystania
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8">
                 <p className="text-gray-700 mb-4">
                   Rozszerzenie jest przeznaczone wyłącznie do użytku osobistego,
                   niekomercyjnego. Zabronione jest używanie Rozszerzenia do
@@ -140,7 +140,7 @@ export default function Terms() {
                 Rozszerzenie przetwarza następujące kategorie danych:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Treść witryny
                   </h3>
@@ -149,7 +149,7 @@ export default function Terms() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Historia online
                   </h3>
@@ -187,7 +187,7 @@ export default function Terms() {
                 </svg>
                 Własność intelektualna
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8">
                 <p className="text-gray-700">
                   Wszelkie prawa własności intelektualnej związane z
                   Rozszerzeniem (w tym kod, grafiki, logo, znaki towarowe)
@@ -200,7 +200,7 @@ export default function Terms() {
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
                 Sugestie generowane przez AI
               </h2>
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8 space-y-4">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-lg mb-8 space-y-4">
                 <p className="text-gray-700">
                   Treści, które Rozszerzenie pokazuje w popupie, są generowane
                   przez model językowy (OpenAI, domyślnie gpt-4o-mini).
@@ -233,7 +233,7 @@ export default function Terms() {
                 </svg>
                 Ograniczenie odpowiedzialności
               </h2>
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-lg mb-8">
                 <p className="text-gray-700 mb-4">
                   Rozszerzenie jest dostarczane &bdquo;tak jak jest&rdquo;, bez
                   jakichkolwiek gwarancji. W maksymalnym zakresie dozwolonym
@@ -267,7 +267,7 @@ export default function Terms() {
                 </svg>
                 Zmiany w Regulaminie
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8">
                 <p className="text-gray-700">
                   Zastrzegamy sobie prawo do modyfikacji niniejszego Regulaminu
                   w dowolnym momencie. Zmiany wchodzą w życie z chwilą
@@ -293,7 +293,7 @@ export default function Terms() {
                 </svg>
                 Kontakt
               </h2>
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-10">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-lg mb-10">
                 <p className="text-gray-700">
                   W przypadku pytań lub uwag dotyczących Rozszerzenia lub
                   niniejszego Regulaminu, prosimy o kontakt poprzez{" "}

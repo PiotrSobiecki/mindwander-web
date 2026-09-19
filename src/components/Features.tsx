@@ -48,7 +48,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white p-6 rounded-lg shadow-xs hover:shadow-md transition-shadow"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>

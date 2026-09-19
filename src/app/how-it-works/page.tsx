@@ -7,7 +7,7 @@ export default function HowItWorks() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -37,7 +37,7 @@ export default function HowItWorks() {
                 i nieoczekiwanych powiązań.
               </p>
 
-              <div className="bg-[#d0ebff] bg-opacity-30 p-8 rounded-xl mb-12">
+              <div className="bg-[#d0ebff]/30 p-8 rounded-xl mb-12">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function HowItWorks() {
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Analizuje treść przeglądanej strony
                   </h3>
@@ -94,7 +94,7 @@ export default function HowItWorks() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Generuje kreatywne zapytania przy użyciu AI
                   </h3>
@@ -105,7 +105,7 @@ export default function HowItWorks() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Sugestie spoza bańki
                   </h3>
@@ -116,7 +116,7 @@ export default function HowItWorks() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Delikatna obecność
                   </h3>
@@ -148,7 +148,7 @@ export default function HowItWorks() {
                 </h2>
                 <ul className="space-y-2 text-gray-800">
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>
@@ -156,7 +156,7 @@ export default function HowItWorks() {
                     <span>Tytuł poruszanego tematu</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>
@@ -167,7 +167,7 @@ export default function HowItWorks() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-white flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>

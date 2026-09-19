@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
+/* Tailwind 4 czyta konfigurację z CSS. Te same tokeny co dawne
+   theme.extend w tailwind.config.js, który już nie jest potrzebny. */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
   --color-primary-100: #d0ebff;
   --color-primary-200: #a5d8ff;
   --color-primary-500: #339af0;

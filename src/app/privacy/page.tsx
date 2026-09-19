@@ -12,7 +12,7 @@ export default function Privacy() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -29,7 +29,7 @@ export default function Privacy() {
             </h1>
 
             <div className="prose prose-lg max-w-none">
-              <div className="bg-[#d0ebff] bg-opacity-30 p-8 rounded-xl mb-12">
+              <div className="bg-[#d0ebff]/30 p-8 rounded-xl mb-12">
                 <p className="text-xl text-gray-700">
                   <strong>
                     MindWander nie zakłada kont, nie profiluje użytkowników i
@@ -87,7 +87,7 @@ export default function Privacy() {
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Treść witryny
                   </h3>
@@ -98,7 +98,7 @@ export default function Privacy() {
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     Historia sugestii
                   </h3>
@@ -143,7 +143,7 @@ export default function Privacy() {
               </p>
               <ul className="space-y-2 text-gray-800 mb-8">
                 <li className="flex items-start">
-                  <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                  <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 shrink-0">
                     <span className="text-[#1c7ed6] font-bold text-sm">✓</span>
                   </div>
                   <span>
@@ -152,7 +152,7 @@ export default function Privacy() {
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                  <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 shrink-0">
                     <span className="text-[#1c7ed6] font-bold text-sm">✓</span>
                   </div>
                   <span>
@@ -183,14 +183,14 @@ export default function Privacy() {
                 </svg>
                 Udostępnianie danych
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8">
                 <p className="text-gray-700 mb-4">
                   Zobowiązujemy się do następujących zasad w zakresie
                   udostępniania danych:
                 </p>
                 <ul className="space-y-2 text-gray-800">
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>
@@ -201,7 +201,7 @@ export default function Privacy() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>
@@ -212,7 +212,7 @@ export default function Privacy() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-[#e7f5ff] flex items-center justify-center mt-1 mr-3 shrink-0">
                       <span className="text-[#1c7ed6] font-bold text-sm">
                         ✓
                       </span>
@@ -242,7 +242,7 @@ export default function Privacy() {
                 </svg>
                 Przechowywanie i usuwanie danych
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8">
                 <p className="text-gray-700 mb-4">
                   Dane związane z funkcjonowaniem rozszerzenia są przechowywane
                   lokalnie w przeglądarce użytkownika.
@@ -259,7 +259,7 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
                 Podstawa prawna i Twoje prawa (RODO)
               </h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8 space-y-4">
+              <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8 space-y-4">
                 <p className="text-gray-700">
                   <strong>Administrator:</strong> MindWander, kontakt{" "}
                   <a
@@ -301,7 +301,7 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
                 Treści generowane przez AI
               </h2>
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8 space-y-4">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-lg mb-8 space-y-4">
                 <p className="text-gray-700">
                   Sugestie pokazywane przez MindWander są generowane przez model
                   językowy (OpenAI, domyślnie gpt-4o-mini), a nie napisane przez
@@ -333,7 +333,7 @@ export default function Privacy() {
                 </svg>
                 Kontakt
               </h2>
-              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-10">
+              <div className="bg-[#d0ebff]/30 p-6 rounded-lg mb-10">
                 <p className="text-gray-700">
                   W sprawach danych osobowych i praw z RODO pisz na{" "}
                   <a

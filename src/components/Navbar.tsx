@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50 py-4">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center">
             <Link
               href="/"
               className="text-2xl font-bold text-[#1c7ed6] hover:text-[#339af0] transition-colors"
@@ -61,7 +61,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 focus:outline-none"
+              className="text-gray-700 focus:outline-hidden"
               aria-label="Toggle menu"
             >
               <svg

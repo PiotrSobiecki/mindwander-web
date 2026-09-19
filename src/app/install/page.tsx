@@ -10,7 +10,7 @@ export default function Install() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -27,7 +27,7 @@ export default function Install() {
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
               <div className="flex items-start">
-                <ExclamationTriangleIcon className="h-6 w-6 text-yellow-500 mr-3 flex-shrink-0 mt-0.5" />
+                <ExclamationTriangleIcon className="h-6 w-6 text-yellow-500 mr-3 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-yellow-800">
                     Uwaga: Tylko dla zaawansowanych użytkowników
@@ -70,7 +70,7 @@ export default function Install() {
               <ol className="list-decimal pl-6 mb-6 space-y-4">
                 <li>
                   <p className="font-semibold">Sklonuj repozytorium:</p>
-                  <pre className="bg-gray-100 rounded p-3 overflow-x-auto">
+                  <pre className="bg-gray-100 rounded-sm p-3 overflow-x-auto">
                     <code>
                       git clone https://github.com/PiotrSobiecki/MindWander.git
                       cd MindWander
@@ -79,13 +79,13 @@ export default function Install() {
                 </li>
                 <li>
                   <p className="font-semibold">Zainstaluj zależności:</p>
-                  <pre className="bg-gray-100 rounded p-3 overflow-x-auto">
+                  <pre className="bg-gray-100 rounded-sm p-3 overflow-x-auto">
                     <code>npm install</code>
                   </pre>
                 </li>
                 <li>
                   <p className="font-semibold">Stwórz plik konfiguracyjny:</p>
-                  <pre className="bg-gray-100 rounded p-3 overflow-x-auto">
+                  <pre className="bg-gray-100 rounded-sm p-3 overflow-x-auto">
                     <code>cp src/config.ts_example.ts src/config.ts</code>
                   </pre>
                 </li>
@@ -125,7 +125,7 @@ export default function Install() {
                 </li>
                 <li>
                   <p className="font-semibold">Zbuduj rozszerzenie:</p>
-                  <pre className="bg-gray-100 rounded p-3 overflow-x-auto">
+                  <pre className="bg-gray-100 rounded-sm p-3 overflow-x-auto">
                     <code>npm run build</code>
                   </pre>
                   <p className="text-gray-600 text-sm mt-2">
@@ -178,7 +178,7 @@ export default function Install() {
               <p className="mb-4">
                 Aby pracować nad rozszerzeniem w trybie deweloperskim:
               </p>
-              <pre className="bg-gray-100 rounded p-3 overflow-x-auto mb-6">
+              <pre className="bg-gray-100 rounded-sm p-3 overflow-x-auto mb-6">
                 <code>npm run watch</code>
               </pre>
               <p>
