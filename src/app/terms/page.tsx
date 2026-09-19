@@ -4,6 +4,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { ArrowLeftIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 
+// Data wersji dokumentu, nie data renderu.
+const LAST_UPDATED = "19 września 2026";
+
 export default function Terms() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -53,7 +56,7 @@ export default function Terms() {
               </h2>
               <p className="text-gray-700 mb-6">
                 Niniejszy regulamin określa zasady korzystania z rozszerzenia
-                przeglądarki MindWander ("Rozszerzenie"). Rozszerzenie jest
+                przeglądarki MindWander (&bdquo;Rozszerzenie&rdquo;). Rozszerzenie jest
                 udostępniane przez MindWander.
               </p>
 
@@ -195,6 +198,25 @@ export default function Terms() {
               </div>
 
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
+                Sugestie generowane przez AI
+              </h2>
+              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8 space-y-4">
+                <p className="text-gray-700">
+                  Treści, które Rozszerzenie pokazuje w popupie, są generowane
+                  przez model językowy (OpenAI, domyślnie gpt-4o-mini).
+                  Informujemy o tym na podstawie art. 50 rozporządzenia UE
+                  2024/1689 (AI Act); oznaczenie pojawia się również w samym
+                  interfejsie Rozszerzenia.
+                </p>
+                <p className="text-gray-700">
+                  Sugestie bywają nietrafione lub niezgodne z faktami.
+                  Rozszerzenie nie jest źródłem wiedzy ani narzędziem doradczym
+                  i nie należy opierać na nim decyzji zawodowych, zdrowotnych,
+                  prawnych ani finansowych.
+                </p>
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -213,7 +235,7 @@ export default function Terms() {
               </h2>
               <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8">
                 <p className="text-gray-700 mb-4">
-                  Rozszerzenie jest dostarczane "tak jak jest", bez
+                  Rozszerzenie jest dostarczane &bdquo;tak jak jest&rdquo;, bez
                   jakichkolwiek gwarancji. W maksymalnym zakresie dozwolonym
                   przez prawo, MindWander nie ponosi odpowiedzialności za
                   jakiekolwiek szkody pośrednie, przypadkowe, specjalne,
@@ -288,7 +310,7 @@ export default function Terms() {
               </div>
 
               <p className="text-center text-sm text-gray-500 mt-12">
-                Ostatnia aktualizacja: {new Date().toLocaleDateString("pl-PL")}
+                Ostatnia aktualizacja: {LAST_UPDATED}
               </p>
             </div>
           </div>

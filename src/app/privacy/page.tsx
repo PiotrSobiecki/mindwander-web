@@ -4,6 +4,10 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { ArrowLeftIcon, ShieldCheckIcon } from "@heroicons/react/24/outline";
 
+// Data wersji dokumentu, nie data renderu: new Date() pokazywałoby dzień
+// builda i twierdziło, że polityka była wtedy zmieniana.
+const LAST_UPDATED = "19 września 2026";
+
 export default function Privacy() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -28,12 +32,12 @@ export default function Privacy() {
               <div className="bg-[#d0ebff] bg-opacity-30 p-8 rounded-xl mb-12">
                 <p className="text-xl text-gray-700">
                   <strong>
-                    Rozszerzenie MindWander nie gromadzi, nie przechowuje ani
-                    nie udostępnia żadnych danych osobowych użytkowników osobom
-                    trzecim.
-                  </strong>
-                  Analizowane są jedynie treści przeglądanych stron w celu
-                  generowania inspirujących sugestii.
+                    MindWander nie zakłada kont, nie profiluje użytkowników i
+                    nie sprzedaje danych.
+                  </strong>{" "}
+                  Aby wygenerować sugestię, rozszerzenie wysyła treść
+                  przeglądanej strony do OpenAI i Brave Search. Historia
+                  sugestii zostaje w przeglądarce.
                 </p>
               </div>
 
@@ -60,8 +64,8 @@ export default function Privacy() {
                 naszego rozszerzenia do przeglądarki.
               </p>
               <p className="text-gray-700 mb-6">
-                Dane te nie są przesyłane ani wykorzystywane w innych celach niż
-                działanie rozszerzenia.
+                Dane trafiają wyłącznie do dostawców wymienionych niżej i nie
+                są wykorzystywane w innych celach niż działanie rozszerzenia.
               </p>
 
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
@@ -157,8 +161,9 @@ export default function Privacy() {
                 </li>
               </ul>
               <p className="text-gray-700 mb-8">
-                Dane nie są przesyłane ani wykorzystywane w innych celach niż
-                działanie rozszerzenia i zapewnienie jego podstawowych funkcji.
+                Poza zapytaniami do OpenAI i Brave Search, opisanymi wyżej,
+                dane nie są przesyłane nigdzie indziej ani wykorzystywane w
+                innych celach niż działanie rozszerzenia.
               </p>
 
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
@@ -252,6 +257,67 @@ export default function Privacy() {
               </div>
 
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
+                Podstawa prawna i Twoje prawa (RODO)
+              </h2>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8 space-y-4">
+                <p className="text-gray-700">
+                  <strong>Administrator:</strong> MindWander, kontakt{" "}
+                  <a
+                    href="mailto:info@mind-wander.org"
+                    className="text-[#1c7ed6] hover:underline"
+                  >
+                    info@mind-wander.org
+                  </a>
+                  .
+                </p>
+                <p className="text-gray-700">
+                  <strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. b RODO —
+                  przetwarzanie jest niezbędne do wykonania usługi, o którą
+                  prosisz, czyli wygenerowania sugestii dla strony, którą
+                  właśnie czytasz.
+                </p>
+                <p className="text-gray-700">
+                  <strong>Odbiorcy i transfer poza EOG:</strong> treść
+                  przeglądanej strony trafia do OpenAI (USA) i Brave Search w
+                  celu wygenerowania sugestii. Transfer odbywa się na
+                  standardowych klauzulach umownych tych dostawców. Poza nimi
+                  danych nie przekazujemy nikomu.
+                </p>
+                <p className="text-gray-700">
+                  <strong>Okres przechowywania:</strong> historia sugestii i
+                  ustawienia są trzymane wyłącznie w Twojej przeglądarce, do
+                  momentu ich usunięcia lub odinstalowania rozszerzenia. Nie
+                  prowadzimy kopii po swojej stronie.
+                </p>
+                <p className="text-gray-700">
+                  <strong>Twoje prawa:</strong> dostęp do danych, sprostowanie,
+                  usunięcie, ograniczenie przetwarzania, sprzeciw oraz
+                  przenoszenie danych. Przysługuje Ci też skarga do Prezesa
+                  Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193
+                  Warszawa.
+                </p>
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
+                Treści generowane przez AI
+              </h2>
+              <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-8 space-y-4">
+                <p className="text-gray-700">
+                  Sugestie pokazywane przez MindWander są generowane przez model
+                  językowy (OpenAI, domyślnie gpt-4o-mini), a nie napisane przez
+                  człowieka. Mogą zawierać błędy, uproszczenia i nietrafione
+                  skojarzenia — traktuj je jako punkt wyjścia do własnych
+                  poszukiwań, nie jako źródło.
+                </p>
+                <p className="text-gray-700">
+                  Informujemy o tym na podstawie art. 50 rozporządzenia UE
+                  2024/1689 (AI Act). Rozszerzenie oznacza wygenerowane treści
+                  jako pochodzące od AI w samym interfejsie, przy pierwszej
+                  ekspozycji, a nie dopiero w tym dokumencie.
+                </p>
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center mt-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -269,8 +335,14 @@ export default function Privacy() {
               </h2>
               <div className="bg-[#d0ebff] bg-opacity-30 p-6 rounded-lg mb-10">
                 <p className="text-gray-700">
-                  W przypadku pytań lub uwag dotyczących prywatności, prosimy o
-                  kontakt poprzez{" "}
+                  W sprawach danych osobowych i praw z RODO pisz na{" "}
+                  <a
+                    href="mailto:info@mind-wander.org"
+                    className="text-[#1c7ed6] hover:underline"
+                  >
+                    info@mind-wander.org
+                  </a>
+                  . Uwagi techniczne przyjmujemy też przez{" "}
                   <a
                     href="https://github.com/PiotrSobiecki/MindWander"
                     className="text-[#1c7ed6] hover:underline"
@@ -284,7 +356,7 @@ export default function Privacy() {
               </div>
 
               <p className="text-center text-sm text-gray-500 mt-12">
-                Ostatnia aktualizacja: {new Date().toLocaleDateString("pl-PL")}
+                Ostatnia aktualizacja: {LAST_UPDATED}
               </p>
             </div>
           </div>

@@ -15,41 +15,44 @@ MindWander to narzędzie, które:
 
 - **Inteligentne sugestie** - odkrywaj nieoczywiste powiązania między tematami
 - **Eksploracja koncepcyjna** - łącz idee z różnych dziedzin wiedzy
-- **Bezpieczeństwo prywatności** - analiza tylko treści stron, bez gromadzenia danych osobowych
+- **Prywatność** - brak kont i profilowania; treść strony idzie do OpenAI i Brave tylko po to, by zbudować sugestię
 - **Lokalna historia** - pełna kontrola nad swoimi danymi
 
 ## 🛠️ Technologie
 
-- Next.js 14
-- React 18
+- Next.js 16
+- React 19
 - TypeScript
 - Tailwind CSS
-- Framer Motion
 
 ## 🏗️ Rozwój
 
 ```bash
-# Instalacja zależności
-npm install
+# Instalacja zależności (pnpm — wersja przypięta w packageManager)
+pnpm install
 
 # Uruchomienie w trybie deweloperskim
-npm run dev
+pnpm dev
 
-# Budowanie
-npm run build
+# Lint i typy
+pnpm lint
+pnpm typecheck
 
-# Uruchomienie wersji produkcyjnej
-npm start
+# Budowanie i uruchomienie produkcyjne
+pnpm build
+pnpm start
 ```
 
 ## 🔒 Prywatność
 
 MindWander:
 
-- Nie gromadzi danych osobowych
-- Analizuje tylko treści stron do generowania sugestii
-- Nie przekazuje danych do zewnętrznych serwerów
-- Pozwala na lokalne usuwanie historii
+- Nie zakłada kont i nie profiluje użytkowników
+- Wysyła treść przeglądanej strony do OpenAI i Brave Search, żeby wygenerować sugestię
+- Poza tymi dostawcami nie przekazuje danych nikomu
+- Historię trzyma lokalnie i pozwala ją w każdej chwili usunąć
+
+Szczegóły: [Polityka prywatności](https://mindwander.app/privacy).
 
 ## 📝 Licencja
 
