@@ -1,5 +1,5 @@
 # Node 22 LTS; package.json wymaga >=20.9.0 (Next 16).
-FROM node:22-alpine AS base
+FROM node:25-alpine AS base
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
 RUN corepack enable
