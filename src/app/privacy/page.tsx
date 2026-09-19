@@ -260,6 +260,9 @@ export default function Privacy() {
                 Podstawa prawna i Twoje prawa (RODO)
               </h2>
               <div className="bg-white p-6 rounded-lg shadow-xs border border-gray-100 mb-8 space-y-4">
+                {/* Art. 13 RODO wymaga pełnej tożsamości administratora:
+                    nazwy firmy albo imienia i nazwiska oraz adresu. Sama nazwa
+                    handlowa z e-mailem tego nie spełnia — do uzupełnienia. */}
                 <p className="text-gray-700">
                   <strong>Administrator:</strong> MindWander, kontakt{" "}
                   <a
