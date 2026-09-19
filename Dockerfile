@@ -3,7 +3,11 @@
 FROM node:26-alpine AS base
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
-RUN corepack enable
+
+# Node 26 nie dostarcza już corepacka (usunięty z dystrybucji), więc bierzemy
+# go z npm. Dzięki temu wersja pnpm nadal pochodzi z pola packageManager
+# w package.json — jedno źródło prawdy zamiast pinu w dwóch miejscach.
+RUN npm install -g corepack@latest && corepack enable
 
 # Etap instalacji zależności
 FROM base AS deps

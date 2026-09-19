@@ -36,3 +36,29 @@ jobs:
       - run: pnpm typecheck
 
       - run: pnpm build
+
+  # Lint i typy nie dotykają Dockerfile'a — pnpm w CI stawia osobna akcja.
+  # Ten job buduje obraz naprawdę, więc łapie rzeczy w rodzaju brakującego
+  # corepacka w obrazie bazowym, zanim zrobi to Railway.
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - run: docker build -t mindwander-site:ci .
+
+      # Obraz ma wstać i odpowiedzieć, nie tylko się zbudować.
+      - name: Smoke test
+        run: |
+          docker run -d --name ci -p 3000:3000 mindwander-site:ci
+          for i in $(seq 1 30); do
+            if curl -fsS -o /dev/null http://localhost:3000/; then
+              echo "serwer odpowiada"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "brak odpowiedzi z kontenera"
+          docker logs ci
+          exit 1
